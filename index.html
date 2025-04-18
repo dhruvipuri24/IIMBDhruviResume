@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhruvi Puri - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --accent: #66ccff;
+      --bg: #f9fbff;
+      --text: #333;
+      --light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding-top: 120px;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      text-align: center;
+      animation: slideDown 1s ease-out;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .left, .right {
+      flex: 1 1 48%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      animation: fadeInUp 1s ease-in;
+    }
+    
+
+    .section {
+      background-color: var(--light);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .section:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid var(--primary);
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--bg);
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem;
+      margin-top: 3rem;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .interactive-button {
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .interactive-button:hover {
+      background-color: #55bbee;
+    }
+
+    #quote-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: var(--bg);
+      border-left: 5px solid var(--accent);
+      font-style: italic;
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dhruvi Puri</h1>
+    <p>BBA Student | IIM Bangalore</p>
+    <p>📧 dhruvi.puri24@iimb.ac.in | 📱 +91 8368669116 | 📍 Gurugram, Haryana</p>
+  </header>
+
+  <main class="container">
+    <div class="left">
+      <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I am a student, currently pursuing my undergraduation (BBA DBE) from IIM Bangalore...</p>
+        <button class="interactive-button" onclick="showQuote()">Get Inspired</button>
+        <div id="quote-box"></div>
+      </section>
+
+      <section id="experience" class="section">
+        <h2>Experience</h2>
+        <ul>
+          <li>Became a member of the student council twice (including flag hoisting)</li>
+          <li>Won 1st prize in a Group Discussion competition (as leader)</li>
+          <li>Won 1st prize in intra-class solo speech competition</li>
+          <li>Received a participation trophy for keyboard performance</li>
+          <li>Delivered speeches in various school programs</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="right">
+      <section id="education" class="section">
+        <h2>Education</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Institution</th>
+              <th>Year</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>High School</td>
+              <td>Glorious Public School</td>
+              <td>2024</td>
+              <td>Commerce (without Maths)</td>
+            </tr>
+            <tr>
+              <td>Undergraduate</td>
+              <td>IIM Bangalore</td>
+              <td>2027 (Expected)</td>
+              <td>BBA in Digital Business and Entrepreneurship</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="skills" class="section">
+        <h2>Skills</h2>
+        <p><strong>Core Skills:</strong> Time Management, Basic Technical Knowledge, Communication, Organization</p>
+        <p><strong>Soft Skills:</strong> Adaptability, Leadership Potential, Eagerness to Learn, Volunteer Work</p>
+        <p><strong>Languages:</strong> English, Hindi</p>
+      </section>
+
+      <section id="future" class="section">
+        <h2>Future Plans</h2>
+        <p>I have been lucky enough to be able to recognise my passion, which I surely think is entrepreneurship...</p>
+        <p>My hobbies include reading (especially about spirituality, health, and finance), playing tennis, going to the gym, and writing. Every day, I aim to grow both personally and professionally.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Dhruvi Puri · Designed with ambition and aesthetic sense
+  </footer>
+
+  <script>
+    function showQuote() {
+      const quotes = [
+        "Believe you can and you're halfway there.",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "The best way to get started is to quit talking and begin doing.",
+        "Your time is limited, don’t waste it living someone else’s life."
+      ];
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      const quoteBox = document.getElementById('quote-box');
+      quoteBox.style.display = 'block';
+      quoteBox.innerText = random;
+    }
+  </script>
+</body>
+</html>
